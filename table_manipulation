@@ -1,0 +1,38 @@
+#FIRST WE CREATE THE TABLE
+CREATE TABLE friends (
+  id INTEGER,
+  name TEXT,
+  birthday DATE
+);
+#WE INSERT A NEW ROW, IN THIS CASE ORORO WITH THE ID = 1
+INSERT INTO friends (id, name, birthday)
+VALUES (1, "Ororo Munroe", "1940-05-30");
+
+#WE SET IT UP WITH 2 MORE ROWS, WE'LL HAVE 3
+INSERT INTO friends (id, name, birthday)
+VALUES (2, "Rahsa", "1998-06-23");
+
+INSERT INTO friends (id, name, birthday)
+VALUES (3, "Ali", "1996-05-24");
+
+#TO CHANGE THE NAME ORORO TO STORM, WE HAVE TO UPDATE THE TABLE
+UPDATE friends 
+SET name = "Storm"
+WHERE id = 1;
+
+#WE ADD THE COLUMN EMAIL
+ALTER TABLE friends
+ADD COLUMN email TEXT;
+
+#WE SET AN E-MAIL TO A FRIEND, IN THIS CASE TO EX-ORORO
+UPDATE friends
+SET email = "storm@codeacademy.com"
+WHERE id = 1;
+
+#WE REMOVE ORORO FROM OUR LIST
+DELETE FROM friends
+WHERE id = 1;
+
+#WE CHECK THE FINAL TABLE
+SELECT *
+FROM friends; 
