@@ -26,3 +26,20 @@ WHERE cuisine = "Japanese"
  SELECT *
  FROM nomnom
  WHERE health IS NULL;
+
+#Order the table by title (from A-Z).
+ELECT title, publisher
+FROM news
+ORDER BY title ASC;
+
+#Which article names have the word 'bitcoin' in it?
+ SELECT *
+ FROM news
+ WHERE title LIKE "%bitcoin%";
+
+#What are the 20 business articles published most recently? Being b = business
+SELECT *
+FROM news
+WHERE category = "b"
+ORDER BY timestamp DESC
+LIMIT 20;
