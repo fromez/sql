@@ -1,0 +1,8 @@
+#What are the distinct neighborhoods?
+SELECT DISTINCT neighborhood
+FROM nomnom;
+
+#We would like some Chinese takeout. What are our options?
+SELECT *
+FROM nomnom
+WHERE cuisine = "Chinese";
