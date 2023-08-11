@@ -1,0 +1,24 @@
+#Let’s write a query that returns three columns:
+1. The hours of the timestamp
+2. The average score for each hour
+3. The count of stories for each hour
+
+SELECT strftime('%H', timestamp) AS "HOURS",
+  AVG(score),
+  COUNT(*)
+FROM hacker_news
+GROUP BY 1
+LIMIT 20;
+
+#Edit a few things in the previous query:
+1. Round the average scores (ROUND()).
+2. Rename the columns to make it more readable (AS).
+3. Add a WHERE clause to filter out the NULL values in timestamp.
+
+SELECT strftime('%H', timestamp) AS "HOURS",
+  ROUND(AVG(score),0) AS "AVERAGE SCORE",
+  COUNT(*) AS "STORIES FOR EACH HOUR"
+FROM hacker_news
+WHERE timestamp IS NOT NULL
+GROUP BY 1
+ORDER BY 2 DESC;
